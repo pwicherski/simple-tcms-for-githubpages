@@ -20,4 +20,4 @@ steps:
   - action: Confirm the order
     expected: Order confirmation screen appears with order number
 created_at: "2026-07-24"
-updated_at: "2026-07-24"
+updated_at: "2026-07-23"
