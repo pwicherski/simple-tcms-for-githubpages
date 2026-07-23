@@ -1,0 +1,18 @@
+id: TC-0005
+title: Password reset link expires after one use
+suite: auth
+priority: medium
+status: draft
+automated: false
+owner: sample.user
+tags:
+  - security
+preconditions:
+  - An account exists for the test user
+steps:
+  - action: Request a password reset and open the emailed link
+    expected: Password reset form is shown
+  - action: Set a new password, then open the same link again
+    expected: Link is rejected as already used
+created_at: "2026-07-24"
+updated_at: "2026-07-24"

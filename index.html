@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <title>Test Cases</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/" id="brand-link">
+      <span class="brand-mark" aria-hidden="true">▣</span>
+      <span id="app-title">Test Cases</span>
+      <span id="repo-label" class="repo-label"></span>
+    </a>
+    <div class="topbar-actions">
+      <button id="theme-toggle" class="ghost icon-btn" type="button" aria-label="Toggle light/dark theme">◐</button>
+      <span id="conn-status" class="conn-status"></span>
+      <button id="btn-connect" class="ghost" type="button">Connect GitHub</button>
+      <button id="btn-disconnect" class="ghost" type="button" hidden>Disconnect</button>
+      <button id="btn-new" class="primary" type="button">New test case</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="banner" hidden></div>
+    <section id="view-dashboard" hidden>
+      <div class="tiles" id="tiles"></div>
+      <div class="filters" id="filters">
+        <input id="f-search" type="search" placeholder="Search id, title, tags, owner…" aria-label="Search test cases">
+        <select id="f-suite" aria-label="Filter by suite"></select>
+        <select id="f-priority" aria-label="Filter by priority"></select>
+        <select id="f-status" aria-label="Filter by status"></select>
+        <button id="f-clear" class="ghost" type="button">Clear</button>
+      </div>
+      <div class="table-wrap">
+        <table id="tc-table">
+          <thead>
+            <tr>
+              <th>ID</th><th>Title</th><th>Suite</th><th>Priority</th><th>Status</th><th>Auto</th><th>Owner</th><th>Updated</th>
+            </tr>
+          </thead>
+          <tbody id="tc-rows"></tbody>
+        </table>
+      </div>
+      <p id="empty-state" class="empty" hidden>No test cases match the current filters.</p>
+    </section>
+    <section id="view-detail" hidden></section>
+    <section id="view-editor" hidden></section>
+    <section id="view-connect" hidden></section>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+</body>
+</html>
